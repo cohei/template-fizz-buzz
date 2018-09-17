@@ -1,0 +1,55 @@
+name:                template-fizz-buzz
+version:             0.1.0.0
+github:              "cohei/template-fizz-buzz"
+license:             BSD3
+author:              "TANIGUCHI Kohei"
+maintainer:          "a.d.xvii.kal.mai@gmail.com"
+copyright:           "2018 TANIGUCHI Kohei"
+
+extra-source-files:
+  - README.md
+
+description:         Please see the README on GitHub at <https://github.com/cohei/template-fizz-buzz#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - template-haskell
+
+library:
+  source-dirs: src
+
+executables:
+  useFoo:
+    main:                useFoo.hs
+    source-dirs:         app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - template-fizz-buzz
+  ack:
+    main:                ack.hs
+    source-dirs:         app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - template-fizz-buzz
+  ackWithTH:
+    main:                ackWithTH.hs
+    source-dirs:         app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - template-fizz-buzz
+  fizzbuzz:
+    main:                fizzbuzz.hs
+    source-dirs:         app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
