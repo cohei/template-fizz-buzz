@@ -1,0 +1,54 @@
+cabal-version: 3.14
+name: template-fizz-buzz
+version: 0.1.0.0
+description: Please see the README on GitHub at <https://github.com/cohei/template-fizz-buzz#readme>
+homepage: https://github.com/cohei/template-fizz-buzz#readme
+bug-reports: https://github.com/cohei/template-fizz-buzz/issues
+author: TANIGUCHI Kohei
+maintainer: a.d.xvii.kal.mai@gmail.com
+copyright: 2018 TANIGUCHI Kohei
+license: BSD-3-Clause
+extra-source-files:
+  README.md
+
+source-repository head
+  type: git
+  location: https://github.com/cohei/template-fizz-buzz
+
+common dependencies
+  build-depends:
+    base >=4.7 && <5,
+    template-haskell,
+
+library
+  import: dependencies
+  hs-source-dirs: src
+  exposed-modules:
+    Ackermann
+    Foo
+
+executable ack
+  import: dependencies
+  hs-source-dirs: app
+  main-is: ack.hs
+  build-depends:
+    template-fizz-buzz
+
+executable ackWithTH
+  import: dependencies
+  hs-source-dirs: app
+  main-is: ackWithTH.hs
+  build-depends:
+    template-fizz-buzz
+
+executable fizzbuzz
+  import: dependencies
+  hs-source-dirs: app
+  main-is: fizzbuzz.hs
+
+executable useFoo
+  import: dependencies
+  hs-source-dirs: app
+  main-is: useFoo.hs
+  build-depends:
+    template-fizz-buzz
